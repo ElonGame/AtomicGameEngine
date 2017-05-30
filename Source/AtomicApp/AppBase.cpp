@@ -105,6 +105,11 @@ namespace Atomic
         RegisterEnvironmentLibrary(context_);
 #endif
 
+        // Link our project module in, this is an example so doing in AppBase
+        // which is shared by the Atomic Editor and Player, including managed C# player
+        void RegisterMyProjectModule(Atomic::Context* context);
+        RegisterMyProjectModule(context_);
+
         ProcessArguments();
 
         // Read the engine configuration
